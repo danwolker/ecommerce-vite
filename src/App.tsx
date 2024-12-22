@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import ProductsList from "./components/ProductsList";
+import ExclusiveSection from "./components/ExclusiveSection";
+import TestimonialsList from "./components/TestimonialsList";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -31,6 +33,8 @@ function App() {
             </div>
           </div>
         </main>
+        <ExclusiveSection />
+        <TestimonialsList />
       </div>
     </Router>
   );
