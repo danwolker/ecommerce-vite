@@ -24,7 +24,7 @@ export default function Navbar() {
               <Link to="/quem-somos">Quem somos?</Link>
             </li>
             <li>
-              <Link to="/contatos">Contatos</Link>  
+              <Link to="/contatos">Contatos</Link>
             </li>
           </ul>
         </nav>
