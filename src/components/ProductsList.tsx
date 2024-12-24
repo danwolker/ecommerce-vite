@@ -17,8 +17,8 @@ interface ProductsListProps {
 export default function ProductsList({ products }: ProductsListProps) {
   return (
     <div className="product-list">
-      {products.map((product) => (
-        <Product key={product.id} {...product} />
+      {products.map((products) => (
+        <Product key={products.id} {...products} />
       ))}
     </div>
   );

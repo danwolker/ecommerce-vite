@@ -35,7 +35,7 @@ export default function Navbar() {
           </div>
           <button className="shopping-cart">
             <FontAwesomeIcon icon={faShoppingCart} />
-            <div className="product-count">6</div>
+            <div className="-count">6</div>
           </button>
           <button className="menu-button" onClick={() => setShow(!show)}>
             <FontAwesomeIcon icon={faBars} />

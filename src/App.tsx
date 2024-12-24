@@ -1,14 +1,14 @@
+
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import ProductsList from "./components/ProductsList";
-import ExclusiveSection from "./components/ExclusiveSection";
-import TestimonialsList from "./components/TestimonialsList";
 import Footer from "./components/Footer";
+import HomePage from "./components/pages/HomePage";
+import ProductsPage from "./components/pages/ProductsPage";
+import { Product } from "./types/Product";
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     fetch("/db.json")
@@ -23,19 +23,11 @@ function App() {
       <div className="App">
         <Navbar />
         <main>
-          <Header />
-          <div className="page-inner-content">
-            <div className="section-title">
-              <h3>Seleção de Produtos!</h3>
-              <div className="underline"></div>
-              <div className="main-content">
-                <ProductsList products={products} />
-              </div>
-            </div>
-          </div>
+          <Routes>
+            <Route path="/" element={<HomePage products={products} />} />
+            <Route path="/produtos" element={<ProductsPage products={products} />} />
+          </Routes>
         </main>
-        <ExclusiveSection />
-        <TestimonialsList />
         <Footer />
       </div>
     </Router>
