@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart, faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export default function Navbar() {
+// Define as propriedades esperadas pelo componente
+interface NavbarProps {
+  setShowSidebarCart: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Navbar({ setShowSidebarCart }: NavbarProps) {
   const [show, setShow] = useState(false);
 
   return (
@@ -33,9 +38,12 @@ export default function Navbar() {
             <input type="search" placeholder="Procurar" />
             <FontAwesomeIcon icon={faSearch} />
           </div>
-          <button className="shopping-cart">
+          <button
+            className="shopping-cart"
+            onClick={() => setShowSidebarCart(true)}
+          >
             <FontAwesomeIcon icon={faShoppingCart} />
-            <div className="-count">6</div>
+            <div className="product-count">6</div>
           </button>
           <button className="menu-button" onClick={() => setShow(!show)}>
             <FontAwesomeIcon icon={faBars} />

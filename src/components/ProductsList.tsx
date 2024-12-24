@@ -2,13 +2,14 @@ import React from "react";
 import Product from "./Product";
 
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
+  image: string; // Usar a propriedade original do JSON
+  rating: number;
   price: number;
-  image: string; // Caminho ou URL da imagem
-  rating: number; // Corrigido para refletir o JSON
 }
+
 
 interface ProductsListProps {
   products: Product[];

@@ -1,15 +1,18 @@
 import React from "react";
 import ProductsList from "../ProductsList";
 
-// Define as propriedades esperadas
+// Define a interface do produto com base no JSON
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  rating: number;
+}
+
+// Define as propriedades esperadas pela página
 interface ProductsPageProps {
-  products: {
-    id: number;
-    name: string;
-    price: number;
-    description: string;
-    imageUrl: string;
-  }[];
+  products: Product[];
 }
 
 export default function ProductsPage({ products }: ProductsPageProps) {
