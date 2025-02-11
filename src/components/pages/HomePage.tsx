@@ -4,6 +4,10 @@ import SidebarCart from "../SidebarCart";
 import ProductsList from "../ProductsList";
 import ExclusiveSection from "../ExclusiveSection";
 import TestimonialsList from "../TestimonialsList";
+import SubHeader from "../SubHeader";
+import SubPharmacy from "../SubPharmacy";
+import PetFood from "../PetFood"; // Importando o novo componente
+import PubliSocialMedia from "../PubliSocialMedia";
 
 // Define a interface do produto com base no JSON
 interface Product {
@@ -29,6 +33,7 @@ export default function HomePage({
   return (
     <>
       <Header />
+      <SubHeader />
       <SidebarCart
         setShowSidebarCart={setShowSidebarCart}
         showSidebarCart={showSidebarCart}
@@ -43,7 +48,36 @@ export default function HomePage({
         </div>
       </div>
       <ExclusiveSection />
+      <SidebarCart
+        setShowSidebarCart={setShowSidebarCart}
+        showSidebarCart={showSidebarCart}
+      />
+      <div className="page-inner-content">
+        <div className="section-title">
+          <h3>Nossa Farmacia</h3>
+          <div className="underline"></div>
+        </div>
+        <div className="main-content">
+          <ProductsList products={products} />
+        </div>
+      </div>
+      <SubPharmacy />
+      <SidebarCart
+        setShowSidebarCart={setShowSidebarCart}
+        showSidebarCart={showSidebarCart}
+      />
+      <div className="page-inner-content">
+        <div className="section-title">
+          <h3>Rações em Destaque</h3>
+          <div className="underline"></div>
+        </div>
+        <div className="main-content">
+          <ProductsList products={products} />
+        </div>
+      </div>
+      <PetFood />
       <TestimonialsList />
+      <PubliSocialMedia />
     </>
   );
 }

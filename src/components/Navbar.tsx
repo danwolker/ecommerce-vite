@@ -14,22 +14,29 @@ export default function Navbar({ setShowSidebarCart }: NavbarProps) {
   return (
     <div className="nav">
       <div className="inner-content">
-        <h1 className="logo">
-          Love <span>Store</span>
-        </h1>
+      <h1 className="logo">
+  <img src="/images/logoprincipal.png" alt="Love Store" 
+        className="logo-image" />
+    </h1>
         <nav className={show ? "show" : ""}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">ínicio</Link>
             </li>
             <li>
-              <Link to="/produtos">Produtos</Link>
+              <Link to="/produtos">Para seu Cão</Link>
             </li>
             <li>
-              <Link to="/quem-somos">Quem somos?</Link>
+              <Link to="/produtos">Para seu Gato</Link>
             </li>
             <li>
-              <Link to="/contatos">Contatos</Link>
+              <Link to="/produtos">Para Todos Pets</Link>
+            </li>
+            <li>
+              <Link to="/produtos">Fármacia</Link>
+            </li>
+            <li>
+              <Link to="/produtos">Promoções</Link>
             </li>
           </ul>
         </nav>
