@@ -6,7 +6,6 @@ import { faInstagram, faFacebook, faWhatsapp } from "@fortawesome/free-brands-sv
 export default function PubliSocialMedia() {
   return (
     <div className="publi-container">
-      {/* Mensagem de Redes Sociais */}
       <div className="social-text">
         <span>Nos siga nas redes:</span>
         <strong>
@@ -15,16 +14,14 @@ export default function PubliSocialMedia() {
         </strong>
       </div>
 
-      {/* Box de Cadastro */}
       <div className="signup-box">
-        <span>Cadastre-se em nossas promoções</span>
+        <span>Cadastre-se e receba nossas promoções</span>
         <div className="signup-form">
           <input type="email" placeholder="Digite seu e-mail" className="email-input" />
           <button className="signup-button">Cadastre-se</button>
         </div>
       </div>
 
-      {/* Ícone do WhatsApp */}
       <div className="social-whatsapp">
         <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
       </div>

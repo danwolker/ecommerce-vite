@@ -10,16 +10,11 @@ interface ProductProps {
   price: number;
 }
 
-const Product: React.FC<ProductProps> = ({ id, name, image, rating, price }) => {
+const Product: React.FC<ProductProps> = ({ id, name, image, price }) => {
   return (
     <div className="product">
       <img src={image} alt={name} />
       <p className="name">{name}</p>
-      <p className="rate">
-        {Array.from({ length: rating }, (_, index) => (
-          <span key={index}>&#9733;</span>
-        ))}
-      </p>
 
       <p className="price">
         <span>R$:</span>{price}
