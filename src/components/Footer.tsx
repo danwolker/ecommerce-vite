@@ -5,19 +5,11 @@ export default function Footer() {
     return (
         <footer>
             <div className="pager-inner-content content">
-                <div className="download-option">
-                    <p>Baixe nosso APP</p>
-                    <p>Baixa para Android e iOS</p>
-                    <div>
-                        <img src="/public/images/play-store.png" alt="Play Store download" />
-                        <img src="/public/images/app-store.png" alt="App Store download" />
-                    </div>
-                </div>
-
                 <div className="logo-footer">
-                    <h1 className="logo">
-                        Love <span>Store</span>
-                    </h1>
+                <h1 className="logo">
+  <img src="/images/logoprincipal.png" alt="Love Store" 
+        className="logo-image" />
+    </h1>
                     <p>MENSAGEM DA EMPRESA REFERENTE À MARCA
                     </p>
                 </div>
@@ -43,7 +35,7 @@ export default function Footer() {
                 <hr />
 
                 <p className="copyright">
-                    Copyright 2025 - Daniel Wolker - Direitos Autorais
+                    Copyright 2025 - Agropet das Gurias - Direitos Autorais
                 </p>
             </div>
         </footer>

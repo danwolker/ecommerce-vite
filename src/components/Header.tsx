@@ -1,6 +1,6 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom"; // React não é necessário explicitamente aqui
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -15,7 +15,8 @@ export default function Header() {
           </Link>
         </div>
         <div className="Right-side">
-          <img src="/images/header-image.png" alt="Produtos" />
+          {/* Alterar ou remover esta imagem não afetará o background */}
+          <img src="/images/logoprincipal.png" alt="Produtos" />
         </div>
       </div>
     </header>

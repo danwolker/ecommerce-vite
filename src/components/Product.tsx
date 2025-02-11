@@ -7,7 +7,6 @@ interface ProductProps {
   id: number;
   name: string;
   image: string;
-  rating: number; // Corrigido para usar o nome correto
   price: number;
 }
 
