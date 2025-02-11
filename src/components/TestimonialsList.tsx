@@ -21,7 +21,7 @@ export default function TestimonialsList() {
 
         {/* Swiper Carrossel */}
         <Swiper
-          slidesPerView={2} // Exibe 2 logos por vez
+          slidesPerView={3} // Exibe 3 logos por vez
           slidesPerGroup={1} // Move 1 logo por vez
           spaceBetween={20} // Espaçamento entre os slides
           loop={true} // Mantém o loop ativo
