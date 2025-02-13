@@ -21,10 +21,6 @@ export default function PubliSocialMedia() {
           <button className="signup-button">Cadastre-se</button>
         </div>
       </div>
-
-      <div className="social-whatsapp">
-        <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
-      </div>
     </div>
   );
 }

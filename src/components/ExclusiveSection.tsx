@@ -14,7 +14,7 @@ export default function ExclusiveSection() {
               <p>
                 Sessão exclusiva para anúncios de produtos de alto nível ou que estão em promoção relâmpago.
               </p>
-              <Link to="/products" className="see-more-btn">
+              <Link to="/produtos" className="see-more-btn">
                 <span> Veja Mais  </span>
                 <FontAwesomeIcon icon={faChevronCircleRight} />
               </Link>

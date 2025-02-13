@@ -14,13 +14,25 @@
     },
     {
       "id": 3,
-      "name": "Dualsense PS5",
+      "name": "D5123123e PS5",
       "image": "/images/logoprincipal.png",
       "price": 4000
     },
     {
-      "id": 3,
-      "name": "Dualsense PS5",
+      "id": 4,
+      "name": "Dual512312312PS5",
+      "image": "/images/logoprincipal.png",
+      "price": 4000
+    },
+    {
+      "id": 5,
+      "name": "Duals312312se PS5",
+      "image": "/images/logoprincipal.png",
+      "price": 4000
+    },
+    {
+      "id": 6,
+      "name": "Dualsess5",
       "image": "/images/logoprincipal.png",
       "price": 4000
     }
