@@ -15,12 +15,12 @@ export default function Navbar({ setShowSidebarCart, selectedProducts }: NavbarP
     <div className="nav">
       <div className="inner-content">
         <h1 className="logo">
-          <img src="/images/logoprincipal.png" alt="Love Store" className="logo-image" />
+          <img src="/images/logoprincipal.png" alt="Das Gurias" className="logo-image" />
         </h1>
         <nav className={`${show ? "show" : ""}`}>
           <ul>
             <li><Link to="/">Início</Link></li>
-            <li><Link to="/produtos">Para seu Cão</Link></li>
+            <li><Link to="/src/components/pages/DogsPage.tsx">Para seu Cão</Link></li>
             <li><Link to="/produtos">Para seu Gato</Link></li>
             <li><Link to="/produtos">Para Todos Pets</Link></li>
             <li><Link to="/produtos">Fármacia</Link></li>

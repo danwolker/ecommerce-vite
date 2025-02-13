@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import SidebarCart from "./components/SidebarCart";
 import HomePage from "./components/pages/HomePage";
 import ProductsPage from "./components/pages/ProductsPage";
+import DogsPage from "./components/pages/DogsPage";
 
 interface Product {
   id: number;
@@ -80,6 +81,20 @@ function App() {
               }
             />
             <Route path="/produtos" element={<ProductsPage products={products} addProductToCart={addProductToCart} />} />
+            <Route
+              path="/src/components/pages/DogsPage.tsx"
+              element={
+                <DogsPage
+                  removeProductFromCart={removeProductFromCart}
+                  selectedProducts={selectedProducts}
+                  addProductToCart={addProductToCart}
+                  products={products}
+                  setShowSidebarCart={setShowSidebarCart}
+                  showSidebarCart={showSidebarCart}
+                  cartTotal={cartTotal}
+                />
+              }
+            />
           </Routes>
         </main>
         <Footer />

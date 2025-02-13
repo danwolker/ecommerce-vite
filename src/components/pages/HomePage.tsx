@@ -15,7 +15,6 @@ interface Product {
   name: string;
   price: number;
   image: string;
-  rating: number;
 }
 
 // Define as propriedades esperadas pela página
