@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-export interface Product {
+interface Product {
   id: number;
   name: string;
   image: string;
@@ -13,28 +13,34 @@ export interface Product {
 
 interface ProductsListProps {
   products: Product[];
+  addProductToCart: (id: number) => void;
 }
 
-const ProductsList: React.FC<ProductsListProps> = ({ products }) => {
+const ProductsList: React.FC<ProductsListProps> = ({ products, addProductToCart }) => {
+  // Garante que não haja IDs duplicados
+  const uniqueProducts = Array.from(new Set(products.map((p) => p.id))).map((id) =>
+    products.find((p) => p.id === id)
+  );
+
   return (
     <div className="product-carousel-container">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={20}
-        slidesPerView={3}
+        spaceBetween={10}
+        slidesPerView={products.length < 3 ? 1 : 3} // Ajusta se houver poucos produtos
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        loop
+        loop={products.length >= 3} // Desativa loop se houver poucos produtos
         breakpoints={{
-          1024: { slidesPerView: 3 },
-          768: { slidesPerView: 2 },
+          1024: { slidesPerView: products.length < 3 ? 1 : 3 },
+          768: { slidesPerView: products.length < 3 ? 1 : 2 },
           480: { slidesPerView: 1 },
         }}
       >
-        {products.map((product) => (
-          <SwiperSlide key={product.id}>
-            <Product {...product} />
+        {uniqueProducts.map((product) => (
+          <SwiperSlide key={product?.id.toString()}>
+            <Product {...product!} addProductToCart={addProductToCart} />
           </SwiperSlide>
         ))}
       </Swiper>

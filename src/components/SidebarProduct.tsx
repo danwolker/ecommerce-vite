@@ -1,28 +1,49 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
 
-export default function SidebarProduct() {
+interface SidebarProductProps {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  removeProductFromCart: (id: number) => void;
+}
+
+export default function SidebarProduct({ id, name, image, price, removeProductFromCart }: SidebarProductProps) {
+  const [quantity, setQuantity] = useState(1);
+  const [priceSum, setPriceSum] = useState(price);
+
   return (
     <div className="sidebar-product">
       <div className="left-side">
-        <button className="remove-product-btn">
+        <button className="remove-product-btn" onClick={() => removeProductFromCart(id)}>
           <FontAwesomeIcon icon={faXmark} />
         </button>
-        
         <div className="details">
-        <h4>Dualsense ps5</h4>
-        <p> R$: 2.000,00</p>
-        <input type="number" min={1} max={100} />
-        <p className="price-sum">
-          <b>Soma :</b> R$: 1.000,00
-        </p>
-      </div>
-        
+          <h4>{name}</h4>
+          <p>R$ {price}</p>
+          <input
+            type="number"
+            min={1}
+            max={100}
+            value={quantity}
+            onChange={(e) => {
+              const newQuantity = Number(e.target.value);
+              setQuantity(newQuantity);
+              setPriceSum(newQuantity * price);
+            }}
+          />
+          {priceSum > price && (
+            <p className="price-sum">
+              <b>Soma: </b> R$ {priceSum.toFixed(2)}
+            </p>
+          )}
+        </div>
       </div>
       <div className="right-side">
-        <img src="public\products\product-6.png" alt="dualsense" />
+        <img src={image} alt={name} />
       </div>
     </div>
-  )
+  );
 }

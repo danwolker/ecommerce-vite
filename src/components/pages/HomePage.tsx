@@ -6,10 +6,10 @@ import ExclusiveSection from "../ExclusiveSection";
 import TestimonialsList from "../TestimonialsList";
 import SubHeader from "../SubHeader";
 import SubPharmacy from "../SubPharmacy";
-import PetFood from "../PetFood"; // Importando o novo componente
+import PetFood from "../PetFood";
 import PubliSocialMedia from "../PubliSocialMedia";
 
-// Define a interface do produto com base no JSON
+// Define a interface do produto
 interface Product {
   id: number;
   name: string;
@@ -23,18 +23,31 @@ interface HomePageProps {
   products: Product[];
   showSidebarCart: boolean;
   setShowSidebarCart: React.Dispatch<React.SetStateAction<boolean>>;
+  addProductToCart: (id: number) => void;
+  selectedProducts: Product[];
+  cartTotal: number;
+  removeProductFromCart: (id: number) => void;
 }
 
 export default function HomePage({
   products,
   showSidebarCart,
   setShowSidebarCart,
+  addProductToCart,
+  selectedProducts,
+  cartTotal,
+  removeProductFromCart,
+  
 }: HomePageProps) {
+
   return (
     <>
       <Header />
       <SubHeader />
       <SidebarCart
+        removeProductFromCart={removeProductFromCart}
+        cartTotal={cartTotal}
+        selectedProducts={selectedProducts}
         setShowSidebarCart={setShowSidebarCart}
         showSidebarCart={showSidebarCart}
       />
@@ -44,38 +57,30 @@ export default function HomePage({
           <div className="underline"></div>
         </div>
         <div className="main-content">
-          <ProductsList products={products} />
+          <ProductsList addProductToCart={addProductToCart} products={products} />
         </div>
       </div>
       <ExclusiveSection />
-      <SidebarCart
-        setShowSidebarCart={setShowSidebarCart}
-        showSidebarCart={showSidebarCart}
-      />
       <div className="page-inner-content">
         <div className="section-title">
-          <h3>Nossa Farmacia</h3>
+          <h3>Seleção de Produtos!</h3>
           <div className="underline"></div>
         </div>
         <div className="main-content">
-          <ProductsList products={products} />
+          <ProductsList addProductToCart={addProductToCart} products={products} />
         </div>
       </div>
       <SubPharmacy />
-      <SidebarCart
-        setShowSidebarCart={setShowSidebarCart}
-        showSidebarCart={showSidebarCart}
-      />
+      <PetFood />
       <div className="page-inner-content">
         <div className="section-title">
-          <h3>Rações em Destaque</h3>
+          <h3>Seleção de Produtos!</h3>
           <div className="underline"></div>
         </div>
         <div className="main-content">
-          <ProductsList products={products} />
+          <ProductsList addProductToCart={addProductToCart} products={products} />
         </div>
       </div>
-      <PetFood />
       <TestimonialsList />
       <PubliSocialMedia />
     </>

@@ -8,9 +8,17 @@ interface ProductProps {
   name: string;
   image: string;
   price: number;
+  addProductToCart: (id: number) => void;
 }
 
-const Product: React.FC<ProductProps> = ({ id, name, image, price }) => {
+const Product: React.FC<ProductProps> = ({ 
+  id, 
+  name, 
+  image, 
+  price, 
+  addProductToCart,
+ }) => 
+    {
   return (
     <div className="product">
       <img src={image} alt={name} />
@@ -25,7 +33,7 @@ const Product: React.FC<ProductProps> = ({ id, name, image, price }) => {
           <span>Comprar Agora</span>
           <FontAwesomeIcon icon={faMoneyBill} />
         </Link>
-        <button className="btn-icon add-to-cart-btn">
+        <button onClick={() => addProductToCart (id)} className="btn-icon add-to-cart-btn">
           <span>Adicionar ao carrinho</span>
           <FontAwesomeIcon icon={faCartShopping} />
         </button>
@@ -35,3 +43,4 @@ const Product: React.FC<ProductProps> = ({ id, name, image, price }) => {
 };
 
 export default Product;
+
