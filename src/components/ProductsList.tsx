@@ -25,16 +25,16 @@ const ProductsList: React.FC<ProductsListProps> = ({ products, addProductToCart 
   return (
     <div className="product-carousel-container">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={10}
-        slidesPerView={products.length < 3 ? 1 : 3} // Ajusta se houver poucos produtos
+       modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={5}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        loop={products.length >= 3} // Desativa loop se houver poucos produtos
+        loop={products.length >= 2} // Desativa loop se houver poucos produtos
         breakpoints={{
-          1024: { slidesPerView: products.length < 3 ? 1 : 3 },
-          768: { slidesPerView: products.length < 3 ? 1 : 2 },
+          1024: { slidesPerView: 3 },
+          768: { slidesPerView: 2 },
           480: { slidesPerView: 1 },
         }}
       >
