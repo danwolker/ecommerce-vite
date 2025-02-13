@@ -15,7 +15,12 @@ interface Product {
 
 interface DogsPageProps {
   products: Product[];
-  addProductToCart: (id: number) => void;
+   showSidebarCart: boolean;
+   setShowSidebarCart: React.Dispatch<React.SetStateAction<boolean>>;
+   addProductToCart: (id: number) => void;
+   selectedProducts: Product[];
+   cartTotal: number;
+   removeProductFromCart: (id: number) => void;
 }
 
 export default function DogsPage({ products, addProductToCart }: DogsPageProps) {
